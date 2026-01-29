@@ -4,11 +4,11 @@ import com.microsoft.playwright.Page;
 
 public class Signup {
 	
-	Page page;
 	private static String username_text="//input[@name='name']";
 	private static String email_text="//input[@name='email']";
 	private static String password_text="//input[@name='password']";
 	private static String button_txt="//button[@type='submit']";
+	private Page page;
 	
 	
 	public Signup(Page page)
@@ -16,16 +16,17 @@ public class Signup {
 		this.page=page;
 	}
 	
-	public void SignupPageUrl()
-	{
-		System.out.println(page.url());
+	public String getSignPageTitle() {
+		String title = page.title();
+		System.out.println("App title is: "+title);
+		return title;
 	}
-	
-	public void SignupTitle()
-	{
-		System.out.println(page.title());
+	public String getSignPageURL() {
+		String url = page.url();
+		System.out.println("App url is:"+url);
+		return url;
 	}
-	
+
 	
 	public void setUsername(String username)
 	{
