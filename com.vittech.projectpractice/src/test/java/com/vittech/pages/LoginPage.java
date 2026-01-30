@@ -4,7 +4,7 @@ import com.microsoft.playwright.Page;
 
 public class LoginPage {
 	
-	Page page;
+    Page page;
 	
 	private static String username_txt="//input[@name='email1']";
 	private static String password_txt="//input[@name='password1']";
@@ -16,43 +16,31 @@ public class LoginPage {
 		this.page=page;
 	}
 	
-	public void LoginPageUrl()
+	public String LoginPageUrl()
 	{
-		System.out.println(page.url());
+		
+		String url=page.url();
+		return url;
 	}
 	
-	public void LoginPageTitle()
+	public String LoginPageTitle()
 	{
-		System.out.println(page.title());
+		String title = page.title();
+		return title;
 	}
 	
 	
-	public void setUsername(String username)
+	public void login(String username,String password)
 	{
 		try {
 			page.locator(username_txt).fill(username);
+			page.locator(password_txt).fill(password);
+			page.locator(button_txt).click();
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	
-	
-	public void setPassword(String password)
-	{
-		try {
-			page.locator(password_txt).fill(password);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-
- public void clickButton()
- {
-	 page.locator(button_txt).click();
- }
-	
 
 }
