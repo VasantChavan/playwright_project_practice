@@ -92,7 +92,6 @@ public class Signup {
 	page.locator("select#hobbies");
 	}
 	
-	
 
  public void clickButton()
  {
