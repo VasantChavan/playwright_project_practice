@@ -12,13 +12,11 @@ public class SignupTestCase extends TestBase {
 	
 	@Test(priority=1)
 public void verifySignupPageTitleTest() {
-	com.vittech.pages.Signup sp;
 	String actual_Title = sp.getSignPageTitle();
 	Assert.assertEquals(actual_Title, "Learn Automation Courses");
 }
 @Test(priority=2)
 public void verifyLoginPageURLTest() {
-	com.vittech.pages.Signup sp;
 	String actual_URL=sp.getSignPageURL();
 	Assert.assertEquals(actual_URL, "https://freelance-learn-automation.vercel.app/signup");
 	
