@@ -83,12 +83,12 @@ public class Signup {
 		page.locator("#gender2").click();
 	}
 	
-	public void clickState()
+	public void selectState()
 	{
 		page.locator("select#state");
 	}
 	
-	public void clickHobbies() {
+	public void selectHobbies() {
 	page.locator("select#hobbies");
 	}
 	

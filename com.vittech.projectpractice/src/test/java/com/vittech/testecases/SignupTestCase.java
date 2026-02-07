@@ -36,8 +36,8 @@ public void verifyLoginPageURLTest() {
 		sp.clickCheckbox1();
 		sp.clickRadio();
 		sp.clickRadio1();
-		sp.clickState();
-		sp.clickHobbies();		
+		sp.selectState();
+		sp.selectHobbies();		
 		sp.clickButton();
 	}
 
