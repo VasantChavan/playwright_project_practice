@@ -4,7 +4,7 @@ import com.microsoft.playwright.Page;
 
 public class LoginPage {
 	
-    Page page;
+   private Page page;
 	
 	private static String username_txt="//input[@name='email1']";
 	private static String password_txt="//input[@name='password1']";
