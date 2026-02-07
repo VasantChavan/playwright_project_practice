@@ -32,12 +32,12 @@ public void verifyLoginPageURLTest() {
 		sp.setUsername("Swati");
 		sp.setEmail("swatimurkute1999@gmail.com");
 		sp.setPassword("123456");
-		sp.setCheckbox();
-		sp.setCheckbox1();
-		sp.setRadio();
-		sp.setRadio1();
-		sp.setState();
-		sp.setHobbies();		
+		sp.clickCheckbox();
+		sp.clickCheckbox1();
+		sp.clickRadio();
+		sp.clickRadio1();
+		sp.selectState();
+		sp.selectHobbies();		
 		sp.clickButton();
 	}
 
