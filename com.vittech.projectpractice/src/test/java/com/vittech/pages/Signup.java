@@ -63,32 +63,32 @@ public class Signup {
 	}
 	
 	
-	public void setCheckbox() {
+	public void clickCheckbox() {
 		page.locator("#69577eb8fb4b8faaf9ad27ed").check();
 
 	}
-	public void setCheckbox1() {
+	public void clickCheckbox1() {
 		page.locator("#69577ebffb4b8faaf9ad27f7").check();
 	}
 	
 	
 	
-	public void setRadio() {
+	public void clickRadio() {
 	
 		page.locator("#gender1").click();
 	}
 	
-	public void setRadio1()
+	public void clickRadio1()
 	{
 		page.locator("#gender2").click();
 	}
 	
-	public void setState()
+	public void clickState()
 	{
 		page.locator("select#state");
 	}
 	
-	public void setHobbies() {
+	public void clickHobbies() {
 	page.locator("select#hobbies");
 	}
 	
