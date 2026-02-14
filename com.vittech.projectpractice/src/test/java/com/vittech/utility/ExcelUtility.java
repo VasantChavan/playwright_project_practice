@@ -12,30 +12,38 @@ import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 
 public class ExcelUtility {
-	public static void main(String[] args)
+static XSSFWorkbook workbook;
+static XSSFSheet sheet;
+
+public void loadExel(String path,String sheetname)
 	{
-    try
-    {
-    Browser browser = Playwright.create().chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
-	Page page=browser.newPage();
-	page.navigate("https://freelance-learn-automation.vercel.app/login");
-    File fs =new File("C:/Users/91777/git/playwright_project_practice/com.vittech.projectpractice/target/Testdata.xlsx");
-    FileInputStream fins=new FileInputStream(fs);
-	XSSFWorkbook workbook = new XSSFWorkbook(fins);
-	XSSFSheet sheet=workbook.getSheet("login");
-	String username=sheet.getRow(0).getCell(0).getStringCellValue();
-	String password=sheet.getRow(1).getCell(1).getStringCellValue();
-	
-	page.locator("//input[@id='email1']").fill(username);
-	page.locator("//input[@id='password1']").fill(password);
-	page.locator("//button[@type='submit']").click();
-			
+       try
+       {
     
-	
-    }
-    catch(Exception e)
-    {
-    e.printStackTrace();	
-    }
-}
+         FileInputStream fins=new FileInputStream(path);
+	     workbook = new XSSFWorkbook(fins);
+	     sheet=workbook.getSheet(sheetname);
+       }
+       catch(Exception e)
+       {
+         e.printStackTrace();	
+       }
+    
+     }
+
+public static String getCellData(int row,int col)
+	 {
+      return sheet.getRow(row).getCell(col).getStringCellValue();
+     }
+
+public static void closeWorkbook() 
+     {
+	        try {
+	              workbook.close();
+	            } 
+	        catch (Exception e) 
+	            {
+	            e.printStackTrace();
+	            }
+        }     
 }
